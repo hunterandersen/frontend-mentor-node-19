@@ -1,0 +1,144 @@
+:root {
+    --color-primary-nutmeg : hsl(14, 45%, 36%);
+    --color-primary-raspberry-dark: hsl(332, 51%, 32%);
+
+    --color-neutral-white-rose: hsl(330, 100%, 98%);
+    --color-neutral-eggshell: hsl(30, 54%, 90%);
+    --color-neutral-grey-light: hsl(30, 18%, 87%);
+    --color-neutral-brown-wenge: hsl(30, 10%, 34%);
+    --color-neutral-charcoal-dark: hsl(24, 5%, 18%);
+
+    --radius-primary: 8px;
+}
+
+@font-face {
+    font-family: young-serif;
+    src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: outfit;
+    src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-block: 1rem;
+    color: var(--color-neutral-brown-wenge);
+}
+
+body {
+    background-color: var(--color-neutral-eggshell);
+}
+
+main {
+    max-width: 700px;
+    padding: 30px;
+    margin-inline: auto;
+    border-radius: var(--radius-primary);
+    background-color: white;
+    font-family: outfit;
+
+    /* To simulate being added into another page */
+    margin-block: 3rem;
+}
+
+section {
+    margin-block: .5rem;
+}
+
+h1, h2, h3 {
+    margin-block: 1rem;
+}
+
+h1 {
+    font-family: young-serif;
+    font-weight: 400;
+    color: var(--color-neutral-charcoal-dark);
+}
+
+h2 {
+    font-family: young-serif;
+    font-weight: 500;
+    color: var(--color-primary-nutmeg);
+}
+
+/* Could simply target h3, but I'm assuming these are a fairly special use case for h3 on the page */
+ol h3 {
+    display: inline;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.prepTime > h2 {
+    font-family: outfit;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-primary-raspberry-dark)
+}
+
+.prepTime {
+    background-color: var(--color-neutral-white-rose);
+    border-radius: var(--radius-primary);
+    padding: 1.5rem;
+}
+
+.prepTime em{
+    font-style: normal;
+    font-weight: 600;
+}
+
+img {
+    width: 100%;
+    border-radius: var(--radius-primary);
+}
+
+li {
+    /* Looks like the list item font is supposed to be less than 16px... I'm not a fan of this, so i'm not using it */
+    /* font-size: .8rem; */
+    color: var(--color-neutral-brown-wenge);
+    padding-left: 1rem;
+    padding-block: .25rem;
+}
+
+ol, ul {
+    margin: 0;
+    padding: 1rem;
+    padding-top: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Creates the "horizontal rule" lines */
+.ingredients, .instructions, tr:not(:last-child) {
+    border-bottom: 1px solid var(--color-neutral-grey-light);
+}
+
+tr {
+    /* Using grid fr units to make the columns stretch horizontally to fill their container so that the borders will stretch*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 10px;
+    padding-inline: 30px;
+}
+
+/* Fancy way to grab the "left column" items */
+/* Likely best to simply add classnames instead */
+td:first-of-type {
+    font-weight: 500;
+    color: grey;
+}
+
+/* Fancy way to grab the "right column" items */
+td:last-of-type {
+    font-weight: 700;
+    color: var(--color-primary-nutmeg);
+}
